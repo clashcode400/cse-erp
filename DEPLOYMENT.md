@@ -17,7 +17,7 @@ This guide details the complete deployment process for the **Computer Science & 
 
 ### Option A: 1-Click Full-Stack Deployment with Render (`render.yaml`)
 
-The repository includes a ready-to-use [`render.yaml`](file:///c:/Users/ACER/.antigravity-ide/cse-erp/render.yaml) blueprint:
+The repository includes a ready-to-use [`render.yaml`](file:///d:/cse-erp/cse-erp/render.yaml) blueprint:
 
 1. Push your code to GitHub/GitLab.
 2. Go to [Render Dashboard](https://dashboard.render.com/) → **Blueprints** → **New Blueprint Instance**.
@@ -55,7 +55,7 @@ The repository includes a ready-to-use [`render.yaml`](file:///c:/Users/ACER/.an
 - **Output Directory**: `dist`
 - **Environment Variable**:
   - `VITE_API_URL`: `https://your-backend-app.onrender.com/api` (Point to your deployed backend)
-- Ready-to-go [`vercel.json`](file:///c:/Users/ACER/.antigravity-ide/cse-erp/frontend/vercel.json) handles client-side routing rewrites automatically.
+- Ready-to-go [`vercel.json`](file:///d:/cse-erp/cse-erp/frontend/vercel.json) handles client-side routing rewrites automatically.
 
 ---
 
@@ -64,8 +64,8 @@ The repository includes a ready-to-use [`render.yaml`](file:///c:/Users/ACER/.an
 ### Method 1: Instant PWA Installation (Zero Setup, Works on Android & iOS)
 
 The app is fully configured as a **Progressive Web App (PWA)** with:
-- Web App Manifest: [`public/manifest.json`](file:///c:/Users/ACER/.antigravity-ide/cse-erp/frontend/public/manifest.json)
-- Service Worker & Cache: [`public/sw.js`](file:///c:/Users/ACER/.antigravity-ide/cse-erp/frontend/public/sw.js)
+- Web App Manifest: [`public/manifest.json`](file:///d:/cse-erp/cse-erp/frontend/public/manifest.json)
+- Service Worker & Cache: [`public/sw.js`](file:///d:/cse-erp/cse-erp/frontend/public/sw.js)
 - Mobile viewport lock and adaptive dark/light status bars.
 
 #### How Students & Faculty Install the App:
@@ -83,7 +83,7 @@ The app is fully configured as a **Progressive Web App (PWA)** with:
 
 ### Method 2: Native Android APK Build (via Capacitor)
 
-A [`capacitor.config.ts`](file:///c:/Users/ACER/.antigravity-ide/cse-erp/frontend/capacitor.config.ts) file is pre-configured in the `frontend` folder:
+A [`capacitor.config.ts`](file:///d:/cse-erp/cse-erp/frontend/capacitor.config.ts) file is pre-configured in the `frontend` folder:
 
 #### Step 1: Install Capacitor in frontend
 ```bash
