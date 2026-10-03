@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from './context/AuthContext';
 import { LoginView } from './components/auth/LoginView';
 import { Navbar } from './components/common/Navbar';
@@ -12,13 +12,25 @@ import { AuditLogViewer } from './components/admin/AuditLogViewer';
 export function AppContent() {
   const { isAuthenticated, isLoading, role } = useAuth();
   const [activeTab, setActiveTab] = useState<string>('dashboard');
+  const [mounted, setMounted] = useState<boolean>(false);
 
-  if (isLoading) {
+  // Prevent hydration mismatches and stuck loading states
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted || isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-cloud dark:bg-darkbg">
         <div className="flex flex-col items-center gap-3">
-          <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-glow animate-pulse-subtle flex-shrink-0">
-            <img src="/cse-logo.jpg" alt="CSE Logo" className="w-full h-full object-cover" />
+          <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-glow animate-pulse flex-shrink-0 bg-blue-600 flex items-center justify-center text-white font-bold text-xl">
+            <img 
+              src="/cse-logo.jpg" 
+              alt="CSE Logo" 
+              className="w-full h-full object-cover" 
+              onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }} 
+            />
+            CSE
           </div>
           <span className="text-xs font-bold text-ink-500 dark:text-ink-400">
             Initializing CSE Department Portal...
